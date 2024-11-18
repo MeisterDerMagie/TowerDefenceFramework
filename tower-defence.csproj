@@ -47,9 +47,24 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AI_TowerDefense\AI_Strategy\AbstractStrategy.cs" />
+    <Compile Include="AI_TowerDefense\AI_Strategy\MartinStrategy\Extensions.cs" />
+    <Compile Include="AI_TowerDefense\AI_Strategy\MartinStrategy\MartinSoldier.cs" />
+    <Compile Include="AI_TowerDefense\AI_Strategy\MartinStrategy\MartinStrategy.cs" />
+    <Compile Include="AI_TowerDefense\AI_Strategy\MartinStrategy\StateMachine\IState.cs" />
+    <Compile Include="AI_TowerDefense\AI_Strategy\MartinStrategy\StateMachine\StateMachine.cs" />
+    <Compile Include="AI_TowerDefense\AI_Strategy\MartinStrategy\StateMachine\States\InitialDefenseState.cs" />
+    <Compile Include="AI_TowerDefense\AI_Strategy\MartinStrategy\StateMachine\States\SaveMoney.cs" />
+    <Compile Include="AI_TowerDefense\AI_Strategy\MartinStrategy\StateMachine\States\MassRecruitementState.cs" />
     <Compile Include="AI_TowerDefense\AI_Strategy\MySoldier.cs" />
     <Compile Include="AI_TowerDefense\AI_Strategy\RandomStrategy.cs" />
     <Compile Include="AI_TowerDefense\AI_Strategy\RandomStrategyLoggerDemo.cs" />
+    <Compile Include="AI_TowerDefense\AI_Strategy\Steinhauer\Consideration.cs" />
+    <Compile Include="AI_TowerDefense\AI_Strategy\Steinhauer\Context.cs" />
+    <Compile Include="AI_TowerDefense\AI_Strategy\Steinhauer\SteinhauerSoldier.cs" />
+    <Compile Include="AI_TowerDefense\AI_Strategy\Steinhauer\SteinhauerStrategy.cs" />
+    <Compile Include="AI_TowerDefense\AI_Strategy\Steinhauer\SteinhauerTower.cs" />
+    <Compile Include="AI_TowerDefense\AI_Strategy\Steinhauer\SteinhauerUtil.cs" />
+    <Compile Include="AI_TowerDefense\AI_Strategy\Steinhauer\UtilityAction.cs" />
     <Compile Include="AI_TowerDefense\AI_Strategy\TowerPlacementTestStrategy.cs" />
     <Compile Include="AI_TowerDefense\GameFramework\Cell.cs" />
     <Compile Include="AI_TowerDefense\GameFramework\Logging\DebugLogger.cs" />

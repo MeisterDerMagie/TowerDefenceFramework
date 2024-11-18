@@ -1,5 +1,6 @@
 ﻿using AI_TowerDefense;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 
 namespace GameFramework
 {
@@ -21,6 +22,9 @@ namespace GameFramework
 
         protected List<Tower> towers = new List<Tower>();
         protected List<Soldier> soldiers = new List<Soldier>();
+
+        public ReadOnlyCollection<Tower> Towers => towers.AsReadOnly();
+        public ReadOnlyCollection<Soldier> Soldiers => soldiers.AsReadOnly();
 
         /*
          * Automatically called by the game play. Forbidden to use as part of
