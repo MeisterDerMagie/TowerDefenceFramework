@@ -88,8 +88,7 @@ public class MartinStrategy : AbstractStrategy
         _offense.AddAnyTransition(allOrNothing, () => _turn > 940);
         _offense.AddAnyTransition(counterAttack, () => IsDangerousAttackIncoming() && player.Gold >= 28);
         _offense.AddTransition(counterAttack, saveMoney, () => player.Gold < 3);
-        _offense.AddTransition(saveMoney, offensiveMassRecruitement, () => player.Gold > 90 && !_defensiveStrategyWorked && _turn < 940); //160
-        _offense.AddTransition(allOrNothing, offensiveMassRecruitement, () => player.Gold > 90 && !_defensiveStrategyWorked && _turn < 940); //160
+        _offense.AddTransition(saveMoney, offensiveMassRecruitement, () => player.Gold > 90 && _turn < 940); //160
         _offense.AddTransition(offensiveMassRecruitement, saveMoney, () => offensiveMassRecruitement.LeaveState && _turn < 940);
 
         _offense.SetState(initialAttack);
