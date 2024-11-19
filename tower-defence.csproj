@@ -6,8 +6,8 @@
     <OutputType>Exe</OutputType>
     <NoStandardLibraries>false</NoStandardLibraries>
     <AssemblyName>ConsoleApplication</AssemblyName>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
-    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <TargetFrameworkProfile></TargetFrameworkProfile>
     <FileAlignment>512</FileAlignment>
     <LangVersion>9</LangVersion>
   </PropertyGroup>
@@ -48,13 +48,21 @@
   <ItemGroup>
     <Compile Include="AI_TowerDefense\AI_Strategy\AbstractStrategy.cs" />
     <Compile Include="AI_TowerDefense\AI_Strategy\MartinStrategy\Extensions.cs" />
-    <Compile Include="AI_TowerDefense\AI_Strategy\MartinStrategy\MartinSoldier.cs" />
+    <Compile Include="AI_TowerDefense\AI_Strategy\MartinStrategy\MartinOverpoweredStrategy2.cs" />
     <Compile Include="AI_TowerDefense\AI_Strategy\MartinStrategy\MartinStrategy.cs" />
+    <Compile Include="AI_TowerDefense\AI_Strategy\MartinStrategy\MartinOverpoweredStrategy.cs" />
+    <Compile Include="AI_TowerDefense\AI_Strategy\MartinStrategy\MartinStrategyTweaking.cs" />
     <Compile Include="AI_TowerDefense\AI_Strategy\MartinStrategy\StateMachine\IState.cs" />
+    <Compile Include="AI_TowerDefense\AI_Strategy\MartinStrategy\StateMachine\MartinSoldier.cs" />
     <Compile Include="AI_TowerDefense\AI_Strategy\MartinStrategy\StateMachine\StateMachine.cs" />
-    <Compile Include="AI_TowerDefense\AI_Strategy\MartinStrategy\StateMachine\States\InitialDefenseState.cs" />
+    <Compile Include="AI_TowerDefense\AI_Strategy\MartinStrategy\StateMachine\States\Idle.cs" />
+    <Compile Include="AI_TowerDefense\AI_Strategy\MartinStrategy\StateMachine\States\DefaultDefenseState.cs" />
+    <Compile Include="AI_TowerDefense\AI_Strategy\MartinStrategy\StateMachine\States\InitialAttack.cs" />
+    <Compile Include="AI_TowerDefense\AI_Strategy\MartinStrategy\StateMachine\States\InitialDefense.cs" />
+    <Compile Include="AI_TowerDefense\AI_Strategy\MartinStrategy\StateMachine\States\OverpoweredState2.cs" />
     <Compile Include="AI_TowerDefense\AI_Strategy\MartinStrategy\StateMachine\States\SaveMoney.cs" />
     <Compile Include="AI_TowerDefense\AI_Strategy\MartinStrategy\StateMachine\States\MassRecruitementState.cs" />
+    <Compile Include="AI_TowerDefense\AI_Strategy\MartinStrategy\StateMachine\States\OverpoweredState.cs" />
     <Compile Include="AI_TowerDefense\AI_Strategy\MySoldier.cs" />
     <Compile Include="AI_TowerDefense\AI_Strategy\RandomStrategy.cs" />
     <Compile Include="AI_TowerDefense\AI_Strategy\RandomStrategyLoggerDemo.cs" />

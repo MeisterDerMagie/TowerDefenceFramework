@@ -6,6 +6,7 @@ using GameFramework;
 namespace Wichtel.StateMachine {
 public interface IState
 {
+    public string Name { get; }
     public Player Player { get; }
     public StateMachine Machine { get; }
     public void OnEnter();

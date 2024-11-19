@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using GameFramework;
 
 namespace AI_Strategy {
 public static class Extensions
@@ -24,6 +26,38 @@ public static class Extensions
     public static bool IsEven(this int number)
     {
         return number % 2 == 0;
+    }
+
+    public static List<Soldier> GetSoldiers(this PlayerLane lane)
+    {
+        List<Soldier> soldiers = new();
+        
+        for (int w = 0; w < PlayerLane.WIDTH; w++)
+        {
+            for (int h = 0; h < PlayerLane.HEIGHT; h++)
+            {
+                Cell cell = lane.GetCellAt(w, h);
+                if(cell.Unit is Soldier soldier) soldiers.Add(soldier);
+            }
+        }
+
+        return soldiers;
+    }
+    
+    public static List<Tower> GetTowers(this PlayerLane lane)
+    {
+        List<Tower> towers = new();
+        
+        for (int w = 0; w < PlayerLane.WIDTH; w++)
+        {
+            for (int h = 0; h < PlayerLane.HEIGHT; h++)
+            {
+                Cell cell = lane.GetCellAt(w, h);
+                if(cell.Unit is Tower tower) towers.Add(tower);
+            }
+        }
+
+        return towers;
     }
 }
 }

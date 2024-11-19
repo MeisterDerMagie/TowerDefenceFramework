@@ -5,13 +5,12 @@ using AI_Strategy;
 using GameFramework;
 
 namespace Wichtel.StateMachine.States {
-public class MassRecruitementState : IState
+public class InitialAttack : IState
 {
-    public MassRecruitementState(Player player, StateMachine machine, int goldBuffer, string name)
+    public InitialAttack(Player player, StateMachine machine, string name)
     {
         Player = player;
         Machine = machine;
-        _goldBuffer = goldBuffer;
         Name = name;
     }
 
@@ -19,7 +18,6 @@ public class MassRecruitementState : IState
     public Player Player { get; }
     public StateMachine Machine { get; }
 
-    private readonly int _goldBuffer; //how much gold do we want to keep minimum as a backup
     public bool LeaveState;
 
     public void OnEnter()
@@ -48,28 +46,22 @@ public class MassRecruitementState : IState
 
     public void DeploySoldiers()
     {
-        if (Player.Gold < _goldBuffer)
-        {
-            EnterSaveMoneyState();
-            return;
-        }
-
-        for (int i = 0; i < PlayerLane.WIDTH - 0 ; i++)
-        {
-            if (Player.Gold < _goldBuffer)
-            {
-                EnterSaveMoneyState();
-                return;
-            }
-            
-            Player.TryBuySoldier(i, out MartinSoldier soldier);
-            if (soldier != null) soldier.ShouldWalk = true;
-        }
-    }
-
-    private void EnterSaveMoneyState()
-    {
         LeaveState = true;
+        MartinStrategy.LeftInitialOffense?.Invoke();
+        return;
+        
+        //////
+        
+        if (Player.Gold >= 14)
+        {
+            for (int i = 0; i < PlayerLane.WIDTH - 0; i++)
+            {
+                Player.TryBuySoldier<Soldier>(i);
+            }
+        }
+
+        LeaveState = true;
+        MartinStrategy.LeftInitialOffense?.Invoke();
     }
 
     public List<Soldier> SortedSoldierArray(List<Soldier> unsortedList)

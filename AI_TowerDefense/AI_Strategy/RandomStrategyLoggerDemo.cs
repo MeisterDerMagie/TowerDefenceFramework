@@ -15,6 +15,11 @@ public class RandomStrategyLoggerDemo : AbstractStrategy
 
     public RandomStrategyLoggerDemo(Player player) : base(player)
     {
+        for (int i = 0; i < 0; i++)
+        {
+        player.Earn();
+            
+        }
     }
 
     /*
@@ -50,6 +55,14 @@ public class RandomStrategyLoggerDemo : AbstractStrategy
      */
     public override void DeploySoldiers()
     {
+        
+        /*for (int i = 2; i < PlayerLane.WIDTH - 2; i++)
+        {
+            player.TryBuySoldier<Soldier>(i);
+        }
+
+        return;*/
+        
 
         //DebugLoger.Log(Tower.GetNextTowerCosts(defendLane));
         DebugLogger.Log("#" + messageCounter + " Deployed Soldier!");
